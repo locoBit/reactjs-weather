@@ -11,7 +11,7 @@ const convertTemperature = kelvinDegrees => {
 };
 
 const formatWeatherData = weatherData => {
-  const { main, name, wind } = weatherData;
+  const { main, wind } = weatherData;
   const { humidity, temp } = main;
   const { speed } = wind;
   const weatherState = getWeatherState();
@@ -22,7 +22,6 @@ const formatWeatherData = weatherData => {
     weatherState,
     humidity,
     wind: `${speed} m/s`,
-    city: name,
   };
 };
 
