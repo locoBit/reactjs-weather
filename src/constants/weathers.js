@@ -1,8 +1,8 @@
 export default {
   cloud: 'cloud',
-  cloudy: 'cloudy',
   sunny: 'day-sunny',
   rain: 'rain',
   snow: 'snow',
-  windy: 'windy'
+  thunder: 'day-thunderstore',
+  drizzle: 'day-showers',
 };

@@ -1,7 +1,12 @@
 import converter from 'convert-units';
 import weathers from './../constants/weathers';
+import weathersIds from './../constants/weathersIds';
 
-const getWeatherState = weatherData => weathers.sunny;
+const getWeatherState = weather => {
+  const { id } = weather;
+
+  return weathersIds[id] ? weathersIds[id] : weathers.cloud;
+};
 
 const convertTemperature = kelvinDegrees => {
   const temperature = converter(kelvinDegrees).from('K').to('C');
@@ -11,18 +16,19 @@ const convertTemperature = kelvinDegrees => {
 };
 
 const formatWeatherData = weatherData => {
-  const { main, wind } = weatherData;
+  const { main, wind, weather } = weatherData;
   const { humidity, temp } = main;
   const { speed } = wind;
-  const weatherState = getWeatherState();
+  const weatherState = getWeatherState(weather[0]);
   const temperature = convertTemperature(temp);
-
-  return {
+  const data = {
     temperature,
     weatherState,
     humidity,
     wind: `${speed} m/s`,
   };
+
+  return data;
 };
 
 export default formatWeatherData;
