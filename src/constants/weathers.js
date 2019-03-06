@@ -3,6 +3,6 @@ export default {
   sunny: 'day-sunny',
   rain: 'rain',
   snow: 'snow',
-  thunder: 'day-thunderstore',
+  thunder: 'day-thunderstorm',
   drizzle: 'day-showers',
 };

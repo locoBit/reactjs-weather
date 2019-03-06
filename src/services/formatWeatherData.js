@@ -10,7 +10,7 @@ const getWeatherState = weather => {
 
 const convertTemperature = kelvinDegrees => {
   const temperature = converter(kelvinDegrees).from('K').to('C');
-  const roundTemperature = Number(temperature).toFixed(2);
+  const roundTemperature = Number(temperature).toFixed(0);
 
   return parseFloat(roundTemperature);
 };
