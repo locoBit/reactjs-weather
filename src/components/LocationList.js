@@ -11,9 +11,10 @@ const stringToComponent = (cities, onSelectedLocation) => {
   return cities.map(city => {
     return (
       <WeatherLocation
-        key={city}
-        city={city}
-        onWeatherLocationClick={ () => handleWeatherLocationClick(city, onSelectedLocation) }
+        key={ city.key }
+        city={ city.name }
+        onWeatherLocationClick={ () => handleWeatherLocationClick(city.name) }
+        data={ city.data }
       />
     );
   });
